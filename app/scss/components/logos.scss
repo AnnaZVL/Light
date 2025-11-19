@@ -1,0 +1,37 @@
+@use '../helpers/variables.scss' as *;
+
+.logos-slider {       
+    margin-top: 105px;
+    padding: 25px 0;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;     
+
+    &__slide {
+        display: inline-flex;
+        align-items: center;
+        gap: 42px;
+        border: 1px solid $color_green-logo;
+        animation: slide 35s linear infinite;
+    }
+
+    &__item {
+        min-width: 125px;
+        height: 44px;        
+        border-left: 1px solid $color_green-logo; 
+        border-right: 1px solid $color_green-logo;   
+    }
+
+    &__img {
+        filter: brightness(0) invert(1);   
+    }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

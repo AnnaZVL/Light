@@ -1,0 +1,91 @@
+@use '../helpers/variables.scss' as *;
+@use '../helpers/mixins.scss' as *;
+
+.services {
+    &::before {
+        display: none;
+    }
+    
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 66px;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+
+    .services-card {  
+        padding: 30px 35px;              
+        border-radius: 32px;
+        background: $color_bg;
+        position: relative;
+        font-weight: 300;
+        color: $color_white;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        height: 356px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: -2px;            
+            background: linear-gradient(
+            to bottom, 
+            #B1FE33 0%, 
+            #E3FB1E 20%, 
+            transparent 100% 
+            );
+            border-radius: 32px; 
+            z-index: -1;            
+        }
+
+        &--large {
+            grid-column: span 2;
+        }
+
+        &--color {
+            background: linear-gradient(101.65deg, #D4FF00 8.55%, #27F7F8 291.02%), #DEFC1E;
+            color: $color_text;   
+            
+            &.green {
+                background: linear-gradient(108.97deg, #D4FF00 -57.92%, #27F7F8 69.24%), #DEFC1E;
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &__content {
+            display: flex;
+            gap: 100px;
+        }
+
+        &__title {
+            @include font-custom(2rem, 600, 'Unbounded'); 
+        }
+
+        &__inner {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        &__descr {
+            @include font-custom(1.25rem, 400, 'Unbounded');
+            color: $color_green-icon;
+        }
+    }
+
+    &__btn {
+        width: 347px;
+        align-self: center;
+    }
+}

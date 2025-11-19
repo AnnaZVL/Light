@@ -1,0 +1,38 @@
+<header class="header">
+    <div class="container">
+        <div class="header__container">
+            @@include('components/logo.html')
+
+            <nav class="header__nav" aria-label="Главное меню">
+                <ul class="header__menu menu">
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Наши услуги</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Преимущества</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">О компании</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a class="header__link" href="tel:85001231212" aria-label="Позвонить нам" >
+                    <svg class="icon">
+                        <use xlink:href="images/sprite.svg#icons--phone"></use>
+                    </svg>
+                </a>
+                <button class="btn btn--color">
+                    Связаться
+                    <svg class="icon">
+                        <use xlink:href="images/sprite.svg#icons--arrow_btn"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</header>

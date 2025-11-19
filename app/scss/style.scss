@@ -1,0 +1,155 @@
+@use 'helpers/variables.scss' as *;
+@use 'helpers/fonts.scss' as *;
+@use 'helpers/mixins.scss' as *;
+@use 'components/header.scss' as *;
+@use 'components/hero.scss' as *;
+@use 'components/logos.scss' as *;
+@use 'components/services.scss' as *;
+@use 'components/advantages.scss' as *;
+// @use 'components/feedback.scss' as *;
+// @use 'components/revievs.scss' as *;
+// @use 'components/news.scss' as *;
+// @use 'components/about.scss' as *;
+// @use 'components/contacts.scss' as *;
+// @use 'components/footer.scss' as *;
+// @use 'components/modal.scss' as *;
+
+html {    
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0 auto;   
+    color: $color_text;   
+    @include font-default;
+    overflow-x: hidden;
+    background-color: $color_bg;
+}
+
+.main {
+    padding-top: 160px;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1480px;
+    width: 100%;            
+}
+
+.btn {        
+    padding: 12px 24px;
+    display: flex;        
+    justify-content: center;
+    align-items: center;
+    gap: 40px;        
+    background-color: transparent;
+    border: 2px solid $color_green-border;
+    border-radius: 30px;
+    width: 347px;
+    position: relative;
+    z-index: 10;
+    @include font-custom(1.25rem, 400, 'Unbounded');    
+    color: $color_white;
+    height: 50px;   
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;        
+
+    svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    &:hover::before {
+        display: block;           
+    }
+
+    &--color {           
+        background: linear-gradient(89.86deg, #4AFF00 -105.6%, #E3FB1E 99.86%);
+        color: $color_text;
+        font-size: 1rem; 
+    }
+    
+    &::before {
+        content: '';
+        display: none;
+        position: absolute;
+        left: -50px;
+        top: 0;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        opacity: 0.6;
+        animation: load 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        background: linear-gradient(to right, transparent 0%, #4AFF00 20%, transparent 100%);
+    }
+
+    @keyframes load {
+        from {
+            left: -50px;
+        }
+        to {
+            left: 100%;
+        }
+    }
+}
+
+.section {
+    margin-top: 65px;
+    margin-bottom: 150px;
+    position: relative;
+
+    &__title {     
+        margin-bottom: 50px;       
+        @include font-custom(3rem, 800, 'Unbounded');   
+        color: $color_white;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;       
+    }
+}
+
+.logo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);        
+    gap: 0 8px;
+    @include font-custom(1.25rem, 400, 'Nico Moji', 1.25);  
+    color: $color_white;
+    cursor: pointer;
+
+    svg {
+        grid-row: 1 / 2;
+        width: 48px;
+        height: 48px;
+    }
+}

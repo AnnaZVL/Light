@@ -1,0 +1,114 @@
+@use '../helpers/variables.scss' as *;
+@use '../helpers/mixins.scss' as *;
+
+.hero {
+    margin-bottom: 130px;
+
+    &__container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    &__title {
+       @include font-custom(4.75rem, 800, 'Unbounded');   
+        text-transform: uppercase;
+        background: linear-gradient(90deg, #D4FF00 0%, #27F7F8 70%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+
+    &__subtitle {
+        margin-bottom: 30px;
+        @include font-custom(2.25rem, 300, 'Unbounded');  
+        color: $color_white;
+    }
+
+    &__list {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 18px 20px;
+        max-width: 560px;
+    }
+
+    &__item {        
+        padding: 12px 24px;        
+        border-radius: 30px;
+        @include font-custom(0.875rem, 300, 'Unbounded');  
+        color: $color_white;
+        position: relative;
+        background: $color_bg;
+        text-align: center;
+        width: max-content;
+        min-height: 44px;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            inset: -1px;           
+            background: linear-gradient(90deg, #4AFF00 0%, #E3FB1E 100%);
+            border-radius: 32px; 
+            z-index: -1;
+        }
+    }
+
+    &__btn {
+        margin-top: 58px;
+    }
+
+    &__img {
+        padding: 0 90px;
+        position: relative;
+
+        img {
+
+            width: 540px;
+            height: 500px;
+        }
+
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            background-image: url('../images/sprite.svg#icons--hero_icon');
+            background-position: center;   
+            background-repeat: no-repeat;   
+            background-size: cover;      
+        }
+
+        &::after {
+            width: 87px;
+            height: 87px;
+            top: 57px;
+            left: 0;
+        }
+        
+        &::before {
+            width: 55px;
+            height: 55px;
+            bottom: -6%;
+            right: 9%;
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        z-index: -1;        
+        width: 626px;
+        height: 696px;        
+        background: rgba(212, 255, 0, 0.3);
+        filter: blur(260.8px);
+        transform: rotate(-43.26deg);
+    }
+}
