@@ -1,0 +1,109 @@
+@use '../helpers/variables.scss' as *;
+@use '../helpers/mixins.scss' as *;
+
+.stages {
+    margin-bottom: 115px;
+    
+    &__title.section__title {
+        margin-bottom: 100px;
+    }
+
+    &__body {
+        padding: 0 50px;
+        width: 100%;
+        height: 410px;
+        position: relative;
+    }
+
+    &__wave {       
+        position: absolute;   
+        top: 50%;       
+        transform: translateY(-50%); 
+    }
+
+    &__list {
+        display: flex;
+        gap: 185px;
+        align-items: center;
+        justify-content: space-between;      
+        height: 410px;
+        position: relative;      
+
+    }
+
+    &__item {        
+        width: 94px;
+        min-height: 94px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;;
+        height: 62px;
+        font-size: 1.375rem;
+        line-height: 140%;
+        color: $color_white;
+        position: relative;
+        z-index: 10;
+        background: linear-gradient(89.86deg, #4AFF00 -105.6%, #E3FB1E 99.86%), #D82609;
+
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 50%;
+            width: 1px;
+            height: 51px;
+            background-color: $color_gray-text;
+        }
+
+        &:nth-child(1) {
+            transform: translateY(-20px);
+        }
+
+        &:nth-child(2) {
+            transform: translateY(-68px);
+        }
+
+        &:nth-child(4) {
+            transform: translateY(68px);
+        }
+
+        &:nth-child(5) {
+            transform: translateY(20px);
+        }
+
+        &:nth-child(odd) {
+            &::after {
+                top: calc(100% + 6px);
+            }          
+
+            .stages__text {
+               top: calc(100% + 64px); 
+            }
+        }
+
+        &:nth-child(even) {
+            &::after {
+                bottom: calc(100% + 6px);
+            }
+
+            .stages__text {
+               bottom: calc(100% + 64px); 
+            }
+        }
+
+        .icon {
+            width: 53px;
+            height: 53px;
+        }
+    }
+
+    &__text {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: 50%; 
+        min-width: 310px;       
+    }
+}

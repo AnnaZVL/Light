@@ -72,6 +72,10 @@
             @include font-custom(2rem, 600, 'Unbounded'); 
         }
 
+        &__img {
+            flex-shrink: 0;
+        }
+
         &__inner {
             display: flex;
             flex-direction: column;

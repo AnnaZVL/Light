@@ -1,0 +1,105 @@
+@use '../helpers/variables.scss' as *;
+@use '../helpers/mixins.scss' as *;
+
+.cases {
+    margin-bottom: 200px;
+
+    &__title.section__title {
+        margin-bottom: 80px;
+    }
+
+    &.section::before {       
+        background: rgba(212, 255, 0, 0.16);
+        filter: blur(250px);
+        transform: rotate(37.69deg);
+        width: 1155px;
+        height: 1238px;
+        right: -20%;
+        top: -50%;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 104px;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .cases-card {
+        display: flex;
+        background: $color_gray-bg;
+        border-radius: 32px;
+        height: 461px;
+
+        &__img {
+            background: linear-gradient(180deg, rgba(227, 251, 30, 0) 0%, rgba(177, 254, 51, 0.2) 100%);
+            border-radius: 32px;
+            flex-shrink: 0;
+
+            picture img {
+                border-radius: 32px;
+            }
+        }
+
+        &__content {
+            padding: 40px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            font-weight: 300;            
+            color: $color_white;
+        }
+
+        &__title {
+            @include font-custom(1.5rem, 600, 'Unbounded'); 
+            color: $color_green;
+        }
+
+        &__text {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 6;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            line-clamp: 6;
+        }
+
+        &__link {
+            margin-top: auto;
+            display: inline-block;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: $color_white;
+
+            .icon {
+                width: 32px;
+                height: 32px;
+                transform: translateX(-4px);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            
+            &:hover {
+                .icon {
+
+                    transform: translateX(10px);
+                }
+            }
+        }
+    }
+
+    &__btn.btn {
+        width: 347px;
+        align-self: center;
+       font-family: 'Mulish';
+    }
+}

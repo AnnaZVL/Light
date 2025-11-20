@@ -32,6 +32,7 @@
         margin-bottom: 30px;
         @include font-custom(2.25rem, 300, 'Unbounded');  
         color: $color_white;
+        max-width: 580px;
     }
 
     &__list {
@@ -71,7 +72,7 @@
         padding: 0 90px;
         position: relative;
 
-        img {
+        picture img {
 
             width: 540px;
             height: 500px;
